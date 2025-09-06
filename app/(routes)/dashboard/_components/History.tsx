@@ -54,7 +54,7 @@ function History() {
         });
     }
 
-    return (
+   return (
     <div className="bg-white/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100 dark:bg-gray-800/50 dark:border-gray-700">
         <div className="mb-6 sm:mb-8">
             <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
@@ -84,10 +84,10 @@ function History() {
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2 text-center">
                     No History Yet
                 </h3>
-                <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 mb-4 sm:mb-6 text-center max-w-md px-2">
+                <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 mb-4 sm:mb-6 text-center max-w-md">
                     Start using our AI tools to build your career history and track your progress
                 </p>
-                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3">
+                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
                     <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
@@ -102,7 +102,7 @@ function History() {
                         <Link href={history?.aiAgentType + "/" + history?.recordId} key={index}>
                             <div className="group p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-lg sm:rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 cursor-pointer dark:bg-gray-800/60 dark:border-gray-600 dark:hover:border-blue-500">
                                 <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
+                                    <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
                                         {agent && (
                                             <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${getGradientColors(agent.name)} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200 flex-shrink-0`}>
                                                 <Image 
@@ -124,7 +124,7 @@ function History() {
                                         </div>
                                     </div>
                                     
-                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-blue-500 transform group-hover:translate-x-1 transition-all duration-200 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-blue-500 transform group-hover:translate-x-1 transition-all duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                     </svg>
                                 </div>
