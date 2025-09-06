@@ -72,61 +72,63 @@ function AiToolCard({ tool }: AIToolProps) {
         }
     }
 
-    return (
-        <div className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 hover:border-gray-200 dark:bg-gray-800/80 dark:border-gray-700 dark:hover:border-gray-600">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 dark:from-blue-900/10 dark:to-purple-900/10"></div>
-            
-            <div className="relative">
-                <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${getGradientColors(tool.name)} rounded-xl mb-4 shadow-lg group-hover:scale-110 transition-transform duration-200`}>
-                    <Image 
-                        src={tool.icon} 
-                        width={28} 
-                        height={28} 
-                        alt={tool.name}
-                        className="filter brightness-0 invert"
-                    />
-                </div>
-                
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
-                    {tool.name}
-                </h3>
-                
-                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                    {tool.desc}
-                </p>
-                
-                <Button 
-                    className={`w-full bg-gradient-to-r ${getGradientColors(tool.name)} hover:shadow-lg transition-all duration-200 transform hover:scale-[1.02] text-white border-0`}
-                    onClick={onClickButton}
-                    disabled={isLoading}
-                >
-                    {isLoading ? (
-                        <div className="flex items-center gap-2">
-                            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                            Loading...
-                        </div>
-                    ) : (
-                        <>
-                            {tool.button}
-                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                            </svg>
-                        </>
-                    )}
-                </Button>
+    // Replace the return statement in your AiToolCard component with this:
+
+return (
+    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 hover:border-gray-200 dark:bg-gray-800/80 dark:border-gray-700 dark:hover:border-gray-600">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 dark:from-blue-900/10 dark:to-purple-900/10"></div>
+        
+        <div className="relative">
+            <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${getGradientColors(tool.name)} rounded-lg sm:rounded-xl mb-3 sm:mb-4 shadow-lg group-hover:scale-110 transition-transform duration-200`}>
+                <Image 
+                    src={tool.icon} 
+                    width={24} 
+                    height={24} 
+                    alt={tool.name}
+                    className="filter brightness-0 invert sm:w-7 sm:h-7"
+                />
             </div>
             
-            <ResumeUploadDialog 
-                openResumeUpload={openResumeUpload} 
-                setOpenResumeDialog={setOpenResumeUpload} 
-                recordId={id} 
-            />
-            <RoadmapGeneratorDialog
-                openDialog={openRoadmapDialog}
-                setOpenDialog={() => setRoadmapDialog(false)}
-            />
+            <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors leading-tight">
+                {tool.name}
+            </h3>
+            
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+                {tool.desc}
+            </p>
+            
+            <Button 
+                className={`w-full bg-gradient-to-r ${getGradientColors(tool.name)} hover:shadow-lg transition-all duration-200 transform hover:scale-[1.02] text-white border-0 text-sm sm:text-base py-2 sm:py-3`}
+                onClick={onClickButton}
+                disabled={isLoading}
+            >
+                {isLoading ? (
+                    <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        <span className="text-sm sm:text-base">Loading...</span>
+                    </div>
+                ) : (
+                    <>
+                        <span className="text-sm sm:text-base">{tool.button}</span>
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </>
+                )}
+            </Button>
         </div>
-    )
+        
+        <ResumeUploadDialog 
+            openResumeUpload={openResumeUpload} 
+            setOpenResumeDialog={setOpenResumeUpload} 
+            recordId={id} 
+        />
+        <RoadmapGeneratorDialog
+            openDialog={openRoadmapDialog}
+            setOpenDialog={() => setRoadmapDialog(false)}
+        />
+    </div>
+)
 }
 
 export default AiToolCard

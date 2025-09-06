@@ -39,18 +39,13 @@ export function AppSidebar() {
         <Sidebar className="border-r border-gray-200/50 bg-white/80 backdrop-blur-lg dark:bg-gray-900/80 dark:border-gray-700/50">
             <SidebarHeader className="p-6">
                 <div className="text-center">
-                    <div className="relative mx-auto w-32 h-16 mb-3">
-                        <Image 
-                            src="/logo.png" 
-                            alt="AI Career Tools" 
-                            fill
-                            className="object-contain"
-                        />
-                    </div>
-                    <p className="text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                        Build Awesome Skills
-                    </p>
-                </div>
+    <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3">
+        CareerPilot AI
+    </h1>
+    <p className="text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        Build Awesome Skills
+    </p>
+</div>
             </SidebarHeader>
 
             <SidebarContent className="px-4">
