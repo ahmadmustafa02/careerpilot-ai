@@ -5,7 +5,7 @@ import History from '@/app/(routes)/dashboard/_components/History'
 
 function Dashboard() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-blue-950 p-6">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-blue-950 p-3 sm:p-6">
             <div className="max-w-7xl mx-auto">
                 <WelcomeBanner />
                 <div className="mb-5 sm:mb-12"></div>

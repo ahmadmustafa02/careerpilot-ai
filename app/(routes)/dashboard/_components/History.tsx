@@ -100,9 +100,9 @@ function History() {
                     const agent = GetAgentName(history?.aiAgentType);
                     return (
                         <Link href={history?.aiAgentType + "/" + history?.recordId} key={index}>
-                            <div className="group p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-lg sm:rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 cursor-pointer dark:bg-gray-800/60 dark:border-gray-600 dark:hover:border-blue-500">
+                            <div className="group p-3 sm:p-6 bg-white/60 backdrop-blur-sm rounded-lg sm:rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 cursor-pointer dark:bg-gray-800/60 dark:border-gray-600 dark:hover:border-blue-500 overflow-hidden">
                                 <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                                    <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
                                         {agent && (
                                             <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${getGradientColors(agent.name)} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200 flex-shrink-0`}>
                                                 <Image 
