@@ -95,12 +95,11 @@ function History() {
                 </Button>
             </div>
         ) : (
-            <div className="grid gap-3 sm:gap-4">
-                {userHistory?.map((history: any, index: number) => {
+               <div className="grid gap-3 sm:gap-4 w-full">                {userHistory?.map((history: any, index: number) => {
                     const agent = GetAgentName(history?.aiAgentType);
                     return (
                         <Link href={history?.aiAgentType + "/" + history?.recordId} key={index}>
-                            <div className="group p-3 sm:p-6 bg-white/60 backdrop-blur-sm rounded-lg sm:rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 cursor-pointer dark:bg-gray-800/60 dark:border-gray-600 dark:hover:border-blue-500 overflow-hidden">
+                            <div className="group p-2 sm:p-6 bg-white/60 backdrop-blur-sm rounded-lg sm:rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 cursor-pointer dark:bg-gray-800/60 dark:border-gray-600 dark:hover:border-blue-500 overflow-hidden w-full max-w-full">
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
                                         {agent && (
